@@ -27,19 +27,14 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-workbox.routing.registerRoute(
-  ({request}) => request.destination === 'image',
-  imageCache
-);
-
 // Implement asset caching
-const imageCache = new workbox.strategies.CacheFirst({
-  cacheName: 'image-cache',
+const assetCache = new CacheFirst({
+  cacheName: 'asset-cache',
   plugins: [
-    new workbox.cacheableResponse.CacheableResponsePlugin({
+    new CacheableResponsePlugin({
       statuses: [0, 200],
     }),
-    new workbox.expiration.ExpirationPlugin({
+    new ExpirationPlugin({
       maxEntries: 60,
       maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
     }),
