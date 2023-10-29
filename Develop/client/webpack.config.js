@@ -18,6 +18,22 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      new HtmlWebpackPlugin(),
+      new WebpackPwaManifest({
+        filename: 'manifest.json',
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'Progressive Web Application for editing text offline',
+        background_color: '#1a9e1',
+        theme_color: '#1a9e1',
+        start_url: '/',
+        icons: [
+          {
+            src: path.resolve('src/icon.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+          },
+        ],
+      }),
       new InjectManifest({
         swSrc: './src/sw.js',
         swDest: 'service-worker.js',
