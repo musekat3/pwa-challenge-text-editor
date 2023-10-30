@@ -27,8 +27,8 @@ module.exports = () => {
         name: 'Just Another Text Editor',
         short_name: 'J.A.T.E',
         description: 'Progressive Web Application for editing text offline',
-        background_color: '#1a9e1',
-        theme_color: '#1a9e1',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
         start_url: '/',
         icons: [
           {
@@ -59,7 +59,8 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             }
           }
         },
