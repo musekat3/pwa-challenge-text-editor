@@ -29,5 +29,7 @@ And be able to create and access notes without an internet connection
 So I can retrieve them at my convenience
 
 # Links to Heroku and App 
+https://gentle-garden-49371-967b3d51103c.herokuapp.com/
 
+https://github.com/musekat3/pwa-challenge-text-editor 
 
