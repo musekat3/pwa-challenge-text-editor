@@ -30,15 +30,16 @@ module.exports = () => {
         background_color: '#ffffff',
         theme_color: '#ffffff',
         start_url: '/',
+        publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/icon.png'),
+            src: path.resolve('src/images/icon.png'),
             sizes: [96, 128, 192, 256, 384, 512],
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
     ],
